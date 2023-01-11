@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{05BB031D-85FE-493B-AEE6-FFE67E28F863}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ip</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <TargetName>ipncorelib</TargetName>
+    <PlatformToolset>v143</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="..\Application.props" />
+  <PropertyGroup>
+    <IncludePath>$(IncludePath);$(ProjectDir)..\NativeImageCoreDll</IncludePath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClInclude Include="internal\image\deblur_cpp.hpp" />
+    <ClInclude Include="internal\image\diffusion_cpp.hpp" />
+    <ClInclude Include="internal\image\edresampling_cpp.hpp" />
+    <ClInclude Include="internal\image\edt_cpp.hpp" />
+    <ClInclude Include="internal\image\filter_cpp.hpp" />
+    <ClInclude Include="internal\image\metrics_cpp.hpp" />
+    <ClInclude Include="internal\image\objectdetection_cpp.hpp" />
+    <ClInclude Include="internal\image\varmethods_cpp.hpp" />
+    <ClInclude Include="iplib\image\analysis\objectdetection.h" />
+    <ClInclude Include="iplib\image\canny.h" />
+    <ClInclude Include="iplib\image\deblur\deblurtv.h" />
+    <ClInclude Include="iplib\image\deblur\warping.h" />
+    <ClInclude Include="iplib\image\diffusion\diffusion.h" />
+    <ClInclude Include="iplib\image\edt\edt.h" />
+    <ClInclude Include="iplib\image\filter\filter.hpp" />
+    <ClInclude Include="iplib\image\interpolation.h" />
+    <ClInclude Include="iplib\common.h" />
+    <ClInclude Include="iplib\image\filter.h" />
+    <ClInclude Include="iplib\image\metrics\metrics.h" />
+    <ClInclude Include="iplib\image\morphology\binarymorphology.h" />
+    <ClInclude Include="iplib\image\motion.h" />
+    <ClInclude Include="iplib\image\resampling\edresampling.h" />
+    <ClInclude Include="iplib\image\transform.h" />
+    <ClInclude Include="iplib\image\analysis\structuretensoranalysis.h" />
+    <ClInclude Include="internal\core\base\imagebase3d.h" />
+    <ClInclude Include="internal\core\base\imagereadable3d.h" />
+    <ClInclude Include="internal\core\base\imagewritable3d.h" />
+    <ClInclude Include="internal\core\base\pixelreaditerator3d.h" />
+    <ClInclude Include="internal\core\base\pixelwriteiterator3d.h" />
+    <ClInclude Include="internal\core\base\vectorreaditerator3d.h" />
+    <ClInclude Include="internal\core\base\vectorwriteiterator3d.h" />
+    <ClInclude Include="internal\core\bitmap\bitmapimage3d.h" />
+    <ClInclude Include="internal\core\bitmap\custombitmapimage3d.h" />
+    <ClInclude Include="internal\core\bitmap\image3d.h" />
+    <ClInclude Include="iplib\image\core3d.h" />
+    <ClInclude Include="internal\core\base\pixeltypes.h" />
+    <ClInclude Include="internal\core\bitmap\custombitmapimage.h" />
+    <ClInclude Include="iplib\image\io\dibitmap.h" />
+    <ClInclude Include="internal\core\bitmap\image.h" />
+    <ClInclude Include="iplib\image\core.h" />
+    <ClInclude Include="internal\core\base\imagebase.h" />
+    <ClInclude Include="internal\core\base\imagebasefwd.h" />
+    <ClInclude Include="internal\core\base\imagereadable.h" />
+    <ClInclude Include="internal\core\base\imagewritable.h" />
+    <ClInclude Include="internal\core\base\pixelreaditerator.h" />
+    <ClInclude Include="internal\core\base\pixelwriteiterator.h" />
+    <ClInclude Include="internal\core\base\vectorreaditerator.h" />
+    <ClInclude Include="internal\core\base\vectorwriteiterator.h" />
+    <ClInclude Include="internal\core\bitmap\bitmapdatastructure.h" />
+    <ClInclude Include="internal\core\bitmap\bitmapimage.h" />
+    <ClInclude Include="iplib\image\io\imageio.h" />
+    <ClInclude Include="iplib\image\io\videoio.h" />
+    <ClInclude Include="internal\core\ops\convert.h" />
+    <ClInclude Include="internal\core\ops\imagebinaryoperation.h" />
+    <ClInclude Include="internal\core\ops\imageunaryoperation.h" />
+    <ClInclude Include="internal\userinterface\transimage.h" />
+    <ClInclude Include="internal\userinterface\transimage3d.h" />
+    <ClInclude Include="internal\userinterface\transimagebase.h" />
+    <ClInclude Include="iplib\image\variational\varmethods.h" />
+    <ClInclude Include="iplib\math\matrix.h" />
+    <ClInclude Include="iplib\math\quadratic_optimization.h" />
+    <ClInclude Include="iplib\userinterface.h" />
+    <ClInclude Include="internal\userinterface\userinterfacefuncdata.h" />
+    <ClInclude Include="internal\userinterface\uidisplayaccumulator.h" />
+    <ClInclude Include="iplib\math\gauss_function.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="internal\core\core_cpp.hpp">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="test_cpp.hpp">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="internal\userinterface\userinterface_cpp.hpp">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClCompile Include="main.cpp" />
+    <ClInclude Include="internal\math\math_cpp.hpp">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NativeImageCoreDll\NativeImageCoreDll.vcxproj">
+      <Project>{21ac68b0-5214-4c0d-b1b0-30de1c18c502}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

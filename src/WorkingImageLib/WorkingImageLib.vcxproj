@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{781582D8-3AF9-410F-8E21-C2B508FC47ED}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ip</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <TargetName>ipnworklib</TargetName>
+    <PlatformToolset>v143</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="..\..\iplib\cpp\Application.props" />
+  <PropertyGroup>
+    <IncludePath>$(SolutionDir)\iplib\cpp\NativeImageCoreDll;$(SolutionDir)\iplib\cpp\NativeImageCoreLib;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile />
+    <ClCompile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Full Release|x64'">
+    <ClCompile />
+    <ClCompile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Legacy Release|x64'">
+    <ClCompile />
+    <ClCompile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile />
+    <ClCompile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Full Release|Win32'">
+    <ClCompile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Legacy Release|Win32'">
+    <ClCompile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="misc\basicedges\basicedges.hpp" />
+    <ClInclude Include="misc\basicedges\edt.hpp" />
+    <ClInclude Include="misc\blocksplit.h" />
+    <ClInclude Include="misc\padding.h" />
+    <ClInclude Include="misc\simd.h" />
+    <ClInclude Include="misc\vectorimage.h" />
+    <ClInclude Include="resampling\edrfast.h" />
+    <ClInclude Include="resampling\edrvector.h" />
+    <ClInclude Include="resampling\si_resampling.h" />
+    <ClInclude Include="resampling\srcnn.h" />
+    <ClInclude Include="warping\meowarping.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\iplib\cpp\NativeImageCoreLib\NativeImageCoreLib.vcxproj">
+      <Project>{05bb031d-85fe-493b-aee6-ffe67e28f863}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="resampling\edrfast.cpp" />
+    <ClCompile Include="resampling\edrvector.cpp" />
+    <ClCompile Include="resampling\si_resampling.cpp" />
+    <ClCompile Include="resampling\srcnn.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
